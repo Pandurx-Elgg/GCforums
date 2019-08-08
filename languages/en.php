@@ -1,6 +1,6 @@
 <?php
 $site_url = elgg_get_site_url();
-$english = array(
+return array(
 
 	'gcforums:notfound' => "Page not found",
 
@@ -124,5 +124,3 @@ $english = array(
 
 	'gcforums:missing_description' => 'Missing Description',
 );
-
-add_translation("en", $english);
