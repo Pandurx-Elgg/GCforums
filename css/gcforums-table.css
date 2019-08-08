@@ -29,7 +29,7 @@
 .gcforums-th {
     border: 1px solid black;
     padding: 5px 5px 5px 15px;
-    background-color: #e6e6e6;
+    background-color: #8b0000;
     vertical-align: middle;
 }
 
@@ -82,7 +82,7 @@
 
 .gcforums-comment-table {
     border-collapse: collapse;
-    border: 1px solid white;
+    border: 1px solid #111;
     width: 100%;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .gcforums-comment-td {
-    border: 1px solid white;
+    border: 1px solid #111;
     padding-left: 15px;
 }
 
