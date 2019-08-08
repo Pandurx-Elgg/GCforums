@@ -206,8 +206,9 @@ function gcforums_topic_content($topic_guid, $group_guid) {
 }
 
 function get_total_posts($container_guid) {
+	$dbprefix = elgg_get_config('dbprefix');
 	$query = "SELECT r.guid_one, r.relationship, r.guid_two, e.subtype, es.subtype
-			FROM elgg_entity_relationships r, elgg_entities e, elgg_entity_subtypes es
+			FROM {$dbprefix}entity_relationships r, {$dbprefix}entities e, {$dbprefix}entity_subtypes es
 			WHERE r.guid_one = e.guid AND e.subtype = es.id AND r.guid_two = {$container_guid} AND es.subtype = 'hjforumpost'";
 	$num_post = 0;
 	$posts = get_data($query);
@@ -219,8 +220,9 @@ function get_total_posts($container_guid) {
 }
 
 function get_total_topics($container_guid) {
+	$dbprefix = elgg_get_config('dbprefix');
 	$query = "SELECT r.guid_one, r.relationship, r.guid_two, e.subtype, es.subtype
-			FROM elgg_entity_relationships r, elgg_entities e, elgg_entity_subtypes es
+			FROM {$dbprefix}entity_relationships r, {$dbprefix}entities e, {$dbprefix}entity_subtypes es
 			WHERE r.guid_one = e.guid AND e.subtype = es.id AND r.guid_two = {$container_guid} AND es.subtype = 'hjforumtopic'";
 	$num_topic = 0;
 	$topics = get_data($query);
@@ -232,8 +234,9 @@ function get_total_topics($container_guid) {
 }
 
 function get_recent_post($container_guid) {
+	$dbprefix = elgg_get_config('dbprefix');
 	$query = "SELECT r.guid_one, r.relationship, r.guid_two, e.subtype, es.subtype, max(e.time_created) AS time_created, ue.email, ue.username
-			FROM elgg_entity_relationships r, elgg_entities e, elgg_entity_subtypes es, elgg_users_entity ue
+			FROM {$dbprefix}entity_relationships r, {$dbprefix}entities e, {$dbprefix}entity_subtypes es, {$dbprefix}users_entity ue
 			WHERE r.guid_one = e.guid AND e.subtype = es.id AND r.guid_two = {$container_guid} AND es.subtype = 'hjforumtopic' AND ue.guid = e.owner_guid";
 	$post = get_data($query);
 

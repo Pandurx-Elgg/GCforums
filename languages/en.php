@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+return array(
 
 	"gcforums:group_forum_title" => "Group Forum",
 	"gcforums:forum_edit" => "Edit Forum",
@@ -66,6 +66,4 @@ $english = array(
 	"gcforums:notification_subject_post" => "New forum post / Nouveau post sur le forum",
 	"gcforums:notification_body_post" => "%s made a reply in the Forum Topic '%s' with the following content... <br/> %s <br/> You can view this item here: %s <br/>",
 
-	);
-
-add_translation("en", $english);
+);
